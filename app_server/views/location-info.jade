@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Southwark RFC
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          p 123 steet street london se15 xxx
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Training
+            .panel-body
+              p Wednesday : 7:00pm - 9:00pm
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Overview
+                .panel.body.overview
+                  p.lead normally we start with standard warmup followed by ball handling skills, then we split into specific forwards and backs training
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Location map
+            .panel-body
+              img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.484670,- 0.074592&zoom=15&size=400x350&sensor=false&markers=51.484670,-0.074592&scale=2')
+              
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/location/review/new') Add review
+              h2.panel-title new players first impression
+            .panel-body.review-container
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.reviewAuthor Simon Holmes
+                    small.reviewTimestamp 16 July 2013
+                  .col-xs-12
+                    p Great club very welcoming.
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.reviewAuthor Charlie Chaplin
+                    small.reviewTimestamp 16 June 2013
+                  .col-xs-12
+                    p I had a fun time at training we got pushed hard but i have improved each time i've been on a wednesday.
+    .col-xs-12.col-md-3
+      p.lead
+        | Southwark RFC started back in 2008, its a small rugby club in central london.
+      p
+        | If you've been and you like the club - or if you don't - please leave a review to help other people just like you who are looking for a rugby club.
