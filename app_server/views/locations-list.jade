@@ -1,8 +1,7 @@
 extends layout
 
-
-
 block content
+
   h1= title
   p Welcome to #{title}
   #banner.page-header
@@ -10,29 +9,28 @@ block content
       .col-lg-6
         h1= pageHeader.title
           small &nbsp; #{pageHeader.strapline}
-  .row
-    .col-xs-12.col-sm-8
-      p Find a club for you
-    .col-xs-12.col-sm-4
-      p.lead SportsBar helps you find sports club near you.
-  .row.list-group
-    each location in locations
-    .col-xs-12.list-group-item
-      h4
-        a(href='/location')= location.name
-        small &nbsp;
+    .row
+      .col-xs-12.col-sm-8
+        p Find a club for you
+      .col-xs-12.col-sm-4
+        p.lead SportsBar helps you find sports club near you.
+    .row.list-group
+      each location in locations
+        .col-xs-12.list-group-item
+          h4
+          a(href='/location')= location.name
           small &nbsp;
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star
-            span.glyphicon.glyphicon-star-empty
-            span.glyphicon.glyphicon-star-empty
-          span.badge.pull-right.badge-default= location.distance
-         p.address= location.address
-         p
-           each facility in location.facilities
-             span.label.label-warning= facility
-             &nbsp;
-    .col-xs-12.col-sm-4
-      p.lead Love Sports....SportsBar helps you find a place to play you favourite sport......
-
+            small &nbsp;
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star
+              span.glyphicon.glyphicon-star-empty
+              span.glyphicon.glyphicon-star-empty
+            span.badge.pull-right.badge-default= location.distance
+          p.address= location.address
+          p
+            each facility in location.keyFeatures
+              span.label.label-warning= facility
+              &nbsp;
+        .col-xs-12.col-sm-4
+  p.lead Love Sports....SportsBar helps you find a place to play......
