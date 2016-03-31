@@ -6,24 +6,25 @@ module.exports.homelist = function(req, res){
             title: "SportsBar",
             strapline: "fine a sports club near you!"
         },
+        sidebar: "Love Sports....SportsBar helps you find a place to play......",
         locations: [{
-            name: 'Starcups',
+            name: 'Reading RFC',
             address: '125 High Street, Reading, RG6 1PS',
-            rating: 3,
-            facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+            rating: 5,
+            keyFeatures: ['good rugby stardard', 'booze', 'top quatility pitches'],
             distance: '100m'
         },{
-            name: 'Cafe Hero',
-            address: '125 High Street, Reading, RG6 1PS',
+            name: 'southwark FC',
+            address: '123 High Street, london, SE15 211',
             rating: 4,
-            facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-            distance: '200m'
+            keyFeatures: ['good football stardard', 'Food', 'bants'],
+            distance: '12km'
         },{
-            name: 'Burger Queen',
-            address: '125 High Street, Reading, RG6 1PS',
+            name: 'streatham nightwolves ',
+            address: '125 High Street, streatham, sw13 1PS',
             rating: 2,
-            facilities: ['Food', 'Premium wifi'],
-            distance: '250m'
+            keyFeatures: ['ice hockey ', 'booze'],
+            distance: '13km'
         }]
     });
 };
@@ -31,7 +32,38 @@ module.exports.homelist = function(req, res){
 /* get location info page */
 
 module.exports.locationInfo = function(req, res) {
-  res.render('location-info', {title: "Location Info"});
+  res.render('location-info', {
+      title: "Southwark RFC",
+      pageHeader: {title: "Southwark RFC"},
+      sidebar: {
+          context: "during training normally we start with standard warmup followed by ball handling skills, then we split into specific forwards and backs training",
+          callToAction: "please come along and checkout training and give the club a review"
+      },
+      location: {
+          name:"Southwark RFC",
+          address: "123 steet street london se15 xxx",
+          benifits: ['good rugby stardard', 'booze', 'top quatility pitches'],
+          coords: {lat:51.484670, lng: -0.074592},
+          trainingTimes: [{
+              days: "wednesday",
+              start: "19.00hrs",
+              finish: "21.00hrs"
+          }],
+          reviews: [
+              {
+                  author:"Simon Holmes",
+                  timestamp: "16 July 2013",
+                  reviewText:"Great club very welcoming."
+              },
+              {
+                  author:"Simon Holmes",
+                  timestamp: "16 July 2013",
+                  reviewText:"I had a fun time at training we got pushed hard but i have improved each time i've been on a wednesday."
+
+              }
+          ]
+      }
+  });
 };
 
 /* get add review page*/
@@ -39,3 +71,36 @@ module.exports.locationInfo = function(req, res) {
 module.exports.addReview = function(req, res){
   res.render('location-review-form', {title: 'Add review'});
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
