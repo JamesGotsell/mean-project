@@ -51,13 +51,13 @@ module.exports.locationInfo = function(req, res) {
           }],
           reviews: [
               {
-                  author:"Simon Holmes",
-                  timestamp: "16 July 2013",
+                  author:"jon peters",
+                  timestamp: " 20 July 2013",
                   reviewText:"Great club very welcoming."
               },
               {
                   author:"Simon Holmes",
-                  timestamp: "16 July 2013",
+                  timestamp: " 16 July 2013",
                   reviewText:"I had a fun time at training we got pushed hard but i have improved each time i've been on a wednesday."
 
               }
@@ -69,7 +69,10 @@ module.exports.locationInfo = function(req, res) {
 /* get add review page*/
 
 module.exports.addReview = function(req, res){
-  res.render('location-review-form', {title: 'Add review'});
+  res.render('location-review-form', {
+      title: 'Review Southwark RFC on SportsClub',
+      pageHeader: {title: 'Review Southwark rfc'}
+  });
 };
 
 
